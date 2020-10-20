@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+	   xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+		<link rel="stylesheet" th:href="@{/style/main.css}" >
+		<title>Profile</title>
+	</head>
+
+	<body>
+		<div class="title">
+			<div class="col-md-auto">
+				<h1>Profile</h1>
+			</div>
+		</div>
+
+		<div>
+			<ul>
+				<li>
+					<label for="userName">Name:</label>
+					<input id="userName" type="text" class="text" readonly th:text="${user.name}"/>
+				</li>
+				<li>
+					<label for="userEmail">Email:</label>
+					<input id="userEmail" type="text" class="text" readonly th:text="${user.email}"/>
+				</li>
+				<li>
+					<label for="userBirthday">Birthday:</label>
+					<input id="userBirthday" type="text" class="text" readonly th:text="${user.birthday}"/>
+				</li>
+				<li>
+					<label for="userCity">City2:</label>
+					<input id="userCity" type="text" class="text" readonly th:text="${user.city}"/>
+				</li>
+				<li>
+					<label for="userPhone">Phone number:</label>
+					<input id="userPhone" type="text" class="text" readonly th:text="${user.phoneNumber}"/>
+				</li>
+				<li>
+					<label for="userGender">Gender:</label>
+					<input id="userGender" type="text" class="text" readonly th:text="${user.gender}"/>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

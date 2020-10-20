@@ -1,0 +1,100 @@
+body {
+	background-image: url("notepad.jpg");
+	background-repeat: repeat;
+}
+h1 {
+	text-align: center;
+	font-family: cursive;
+}
+form {
+	margin: 0 auto;
+	width: 500px;
+	padding: 1em;
+	border: 1px solid #ccc;
+	border-radius: 1em;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+li {
+	margin-top: 1em;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+label {
+	font-family: cursive;
+	color: #804000;
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+.title {
+	color: white;
+	border-radius: 10px;
+	background: -webkit-linear-gradient( #804000, #e67300);
+}
+.text {
+	font-family: cursive;
+	color: #804000;
+	text-align: left;
+	border: none;
+}
+.text:focus {
+	outline: none;
+}
+.left {
+	margin-left: 180px;
+}
+
+.input {
+	width: 300px;
+	margin-left: 20px;
+	border: none;
+	font-family: cursive;
+	color: #804000;
+	text-align: left;
+}
+.input::-webkit-calendar-picker-indicator {
+    opacity: 100;
+}
+.input:focus {
+	background-color: rgba(128, 64, 0, 0.3);
+	border-radius: 5px;
+	margin-bottom: 3px;
+	outline: none;
+}
+
+.error {
+	width: 300px;
+	margin-left: 20px;
+	border: 1px solid red;
+	margin-bottom: 3px;
+	border-radius: 5px;
+}
+.submit, .cancel{
+	border-radius: 4px;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+.submit:hover, .cancel:hover {
+	box-shadow: 5px 5px 20px 5px #ffff99;
+}
+.submit {
+	background-color: #00cc99;
+	border: 1px solid #006633;
+}
+.cancel {
+	background-color: #ff6666;
+	border: 1px solid #b30000;
+}
