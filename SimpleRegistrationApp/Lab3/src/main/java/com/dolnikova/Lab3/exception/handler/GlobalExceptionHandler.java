@@ -11,6 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.dolnikova.Lab3.exception.PasswordsDoNotMatch;
 import com.dolnikova.Lab3.exception.UserAlreadyExists;
 import com.dolnikova.Lab3.exception.UserNotFoundException;
+import com.dolnikova.Lab3.util.Constants;
 
 @Slf4j
 @ControllerAdvice
@@ -37,7 +38,7 @@ public class GlobalExceptionHandler {
 
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setStatus(HttpStatus.UNAUTHORIZED);
-        redirectAttributes.addFlashAttribute("error", errorMessage);
+        redirectAttributes.addFlashAttribute("error", Constants.CANNOT_AUTHENTICATE_USER);
         modelAndView.setViewName("redirect:/login");
         return modelAndView;
     }

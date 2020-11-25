@@ -31,6 +31,7 @@ a {
 	font-family: cursive;
 	text-decoration: none;
 	float: right;
+	margin-right: 20px;
 }
 a:hover {
     padding-left: 5px;
@@ -40,20 +41,20 @@ a:hover {
 	border-radius: 10px;
 }
 a+a {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 .ul {
-  all: revert;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  text-align: right;
+     all: revert;
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+     text-align: right;
 }
 .li {
-  all: revert;
-  text-align: right;
-  display:inline-block;
+     all: revert;
+     text-align: right;
+     display:inline-block;
 }
 
 .form {
@@ -79,6 +80,11 @@ a+a {
 .text:focus {
 	outline: none;
 }
+.prompt {
+    width: 200px;
+    font-size: 14px;
+}
+
 .left {
 	margin-left: 180px;
 }
@@ -117,6 +123,7 @@ a+a {
     text-align: center;
     border-radius: 5px;
 }
+
 .submit, .cancel{
 	border-radius: 4px;
 	text-align: center;
