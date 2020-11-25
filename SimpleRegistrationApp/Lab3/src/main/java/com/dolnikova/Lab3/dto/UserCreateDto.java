@@ -11,9 +11,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.dolnikova.Lab3.model.UserGender;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class UserCreateDto {
+
     private String name;
     private String email;
 
@@ -23,5 +24,6 @@ public class UserCreateDto {
     private String city;
     private String phoneNumber;
     private String password;
-    private UserGender gender;
+    private String confirmPassword;
+    private UserGender userGender;
 }

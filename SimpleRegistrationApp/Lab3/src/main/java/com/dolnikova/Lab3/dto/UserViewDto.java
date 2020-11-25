@@ -9,8 +9,8 @@ import java.time.LocalDate;
 import com.dolnikova.Lab3.model.UserGender;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class UserViewDto {
     private String name;
     private String email;

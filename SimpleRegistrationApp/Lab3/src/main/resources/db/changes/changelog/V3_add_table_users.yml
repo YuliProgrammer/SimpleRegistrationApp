@@ -1,0 +1,80 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: Yuliia Dolnikova
+      preConditions:
+          - onFail: MARK_RAN
+          - not:
+              - or:
+                  - tableExists:
+                      tableName: users
+
+      changes:
+          - createTable:
+              tableName: users
+              columns:
+                  - column:
+                      name: id
+                      type: INT unsigned
+                      autoIncrement: true
+                      constraints:
+                        primaryKey: true
+                        nullable: false
+                  - column:
+                      name: city_id
+                      type: TINYINT unsigned
+                      constraints:
+                        nullable: false
+                  - column:
+                      name: gender_id
+                      type: TINYINT unsigned
+                      constraints:
+                        nullable: false
+                  - column:
+                      name: name
+                      type: VARCHAR(254)
+                      constraints:
+                        nullable: false
+                  - column:
+                      name: email
+                      type: VARCHAR(254)
+                      constraints:
+                        unique: true
+                        nullable: false
+                  - column:
+                      name: birthday
+                      type: DATE
+                      constraints:
+                        nullable: false
+                  - column:
+                      name: phone
+                      type: VARCHAR(12)
+                      constraints:
+                        nullable: false
+                  - column:
+                      name: password
+                      type: CHAR(64)
+                      constraints:
+                        nullable: false
+
+          - addForeignKeyConstraint:
+              constraintName:  fk_users_cities
+              baseColumnNames:  city_id
+              baseTableName:  cities
+              onDelete:  RESTRICT
+              onUpdate:  CASCADE
+              referencedColumnNames:  id
+              referencedTableName:  cities
+
+          - addForeignKeyConstraint:
+              constraintName:  fk_users_genders
+              baseColumnNames:  gender_id
+              baseTableName:  users
+              onDelete:  RESTRICT
+              onUpdate:  CASCADE
+              referencedColumnNames:  id
+              referencedTableName:  genders
+
+      rollback:
+          - delete:
+              tableName: users

@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Yuliia Dolnikova
+      preConditions:
+          - onFail: MARK_RAN
+          - not:
+              - or:
+                  - tableExists:
+                      tableName: genders
+
+      changes:
+          - createTable:
+              tableName: genders
+              columns:
+                  - column:
+                      name: id
+                      type: tinyint unsigned
+                      autoIncrement: true
+                      constraints:
+                        primaryKey: true
+                        nullable: false
+                  - column:
+                      name: type
+                      type: varchar(16)
+                      constraints:
+                        nullable: false
+                        unique: true
+
+          - insert:
+              tableName: genders
+              columns:
+                  - column:
+                      name: type
+                      value: "Male"
+
+          - insert:
+              tableName: genders
+              columns:
+                  - column:
+                      name: type
+                      value: "Female"
+
+          - insert:
+              tableName: genders
+              columns:
+                  - column:
+                      name: type
+                      value: "Other"
+
+      rollback:
+          - delete:
+              tableName: genders
