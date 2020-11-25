@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: ./changelog/V1_add_table_genders.yml
+      relativeToChangelogFile: true
+  - include:
+      file: ./changelog/V2_add_table_cities.yml
+      relativeToChangelogFile: true
+  - include:
+      file: ./changelog/V3_add_table_users.yml
+      relativeToChangelogFile: true

@@ -6,14 +6,6 @@ h1 {
 	text-align: center;
 	font-family: cursive;
 }
-form {
-	margin: 0 auto;
-	width: 500px;
-	padding: 1em;
-	border: 1px solid #ccc;
-	border-radius: 1em;
-	background-color: rgba(255, 255, 255, 0.7);
-}
 ul {
 	list-style: none;
 	padding: 0;
@@ -33,6 +25,45 @@ label {
 	text-align: right;
 	margin-right: 10px;
 }
+a {
+	color: #e67300;
+	font-size: 14px;
+	font-family: cursive;
+	text-decoration: none;
+	float: right;
+}
+a:hover {
+    padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: underline;
+	background: white;
+	border-radius: 10px;
+}
+a+a {
+  margin-left: 10px;
+}
+
+.ul {
+  all: revert;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+.li {
+  all: revert;
+  text-align: right;
+  display:inline-block;
+}
+
+.form {
+	margin: 0 auto;
+	width: 500px;
+	padding: 1em;
+	border: 1px solid #ccc;
+	border-radius: 1em;
+	background-color: rgba(255, 255, 255, 0.7);
+}
 
 .title {
 	color: white;
@@ -50,6 +81,9 @@ label {
 }
 .left {
 	margin-left: 180px;
+}
+.center {
+    text-align: center;
 }
 
 .input {
@@ -76,6 +110,12 @@ label {
 	border: 1px solid red;
 	margin-bottom: 3px;
 	border-radius: 5px;
+}
+.errorMessage {
+    color: #ffe6e6;
+    background-color: red;
+    text-align: center;
+    border-radius: 5px;
 }
 .submit, .cancel{
 	border-radius: 4px;

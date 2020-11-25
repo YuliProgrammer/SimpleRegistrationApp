@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: Yuliia Dolnikova
+      preConditions:
+          - onFail: MARK_RAN
+          - not:
+              - or:
+                  - tableExists:
+                      tableName: cities
+
+      changes:
+          - createTable:
+              tableName: cities
+              columns:
+                  - column:
+                      name: id
+                      type: INT unsigned
+                      autoIncrement: true
+                      constraints:
+                        primaryKey: true
+                        nullable: false
+                  - column:
+                      name: city
+                      type: VARCHAR(254)
+                      constraints:
+                        unique: true
+                        nullable: false
+
+          - insert:
+              tableName: cities
+              columns:
+                - column:
+                    name: city
+                    value: "Kyiv"
+
+          - insert:
+              tableName: cities
+              columns:
+                - column:
+                    name: city
+                    value: "Dnipro"
+
+          - insert:
+              tableName: cities
+              columns:
+                - column:
+                    name: city
+                    value: "Lviv"
+
+      rollback:
+          - delete:
+              tableName: cities

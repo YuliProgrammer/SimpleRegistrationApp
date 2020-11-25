@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <title>Login</title>
+</head>
+
+<script>
+		var isFormValid = true;
+
+		function validateEmail(){
+			validateElement("userEmail");
+		}
+
+		function validatePassword(){
+			validateElement("userPassword");
+		}
+
+		function validateForm(){
+			validateEmail();
+			validatePassword();
+			return isFormValid;
+		}
+
+		function validateElement(elementName){
+			var element = document.forms["myForm"][elementName].value.toString();
+			if (element.trim() === "") {
+				document.getElementById(elementName).className="error";
+				isFormValid = false;
+			} else {
+				document.getElementById(elementName).className="input";
+			}
+		}
+
+
+</script>
+
+<div class="container">
+
+    <div class="title">
+        <div class="col-md-auto">
+            <h1>Welcome!</h1>
+        </div>
+    </div>
+
+    <form name="myForm" class="form" action="perform_login" method="post" onsubmit="return validateForm()">
+        <div th:if="${error}">
+            <div class="errorMessage" th:text=" ${error}"></div>
+        </div>
+        <ul>
+            <li>
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="email" class="input" placeholder="harry.potter@gmail.com"
+                       onchange="validateEmail()"/>
+            </li>
+            <li>
+                <label for="userPassword">Password:</label>
+                <input type="password" id="userPassword" name="password" class="input" placeholder="HarryPotter123"
+                       onchange="validatePassword()"/>
+            </li>
+            <hr>
+            <li>
+                <div class="center">
+                    <input type="submit" class="submit" value="Log in">
+                </div>
+            </li>
+            <li>
+                <a href="registration"> Registration </a>
+            </li>
+        </ul>
+    </form>
+
+</div>
+</body>
+</html>
