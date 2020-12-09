@@ -3,8 +3,6 @@ package com.dolnikova.Lab3.controller;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,11 +43,9 @@ public class UserController {
     }
 
     @PostMapping("/perform_login")
-    public String loginUser(@ModelAttribute("user") UserLogInDto userLogInDto, Model model,
-            HttpServletRequest request) {
+    public String loginUser(@ModelAttribute("user") UserLogInDto userLogInDto, Model model) {
         UserViewDto user = userFacade.loginUser(userLogInDto);
         model.addAttribute("user", user);
-
         return "profile";
     }
 
