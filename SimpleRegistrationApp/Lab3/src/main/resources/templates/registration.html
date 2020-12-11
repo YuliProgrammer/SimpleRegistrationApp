@@ -108,7 +108,9 @@
             <li>
                 <label for="userPhone">Phone number:</label>
                 <input type="tel" id="userPhone" name="phoneNumber" class="input" placeholder="380661234567"
-                       pattern="[0-9]{12}" onchange="validatePhone()"/>
+                       pattern="[0-9]{12}" onchange="validatePhone()"
+                       title="Phone number must contain 12 numbers."
+                />
             </li>
             <li>
                 <label for="userPassword">Password:</label>
