@@ -1,5 +1,7 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/signature}">
 
 <head>
     <meta charset="utf-8">
@@ -156,6 +158,8 @@
             </li>
         </ul>
     </form>
+
+    <header th:insert="fragments/signature.html :: signature"> </header>
 
 </div>
 </body>

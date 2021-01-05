@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" th:href="@{/style/main.css}">
+    <title>Author</title>
+</head>
+
+<body>
+<div class="title">
+    <div class="col-md-auto">
+        <h1>Author</h1>
+    </div>
+</div>
+
+<div class="form">
+    <p>
+
+        <div class="polaroid">
+            <a href="YuliiaDolnikova.jpg">
+                <img src="YuliiaDolnikova.jpg" width="200" align="left" alt="Yuliia Dolnikova" style="width:104.5%">
+            </a>
+            <div class="container">
+                <h1>Yuliia Dolnikova</h1>
+            </div>
+        </div>
+
+        <ul>
+            <li>
+                <label for="userEmail">Email:</label>
+                <input id="userEmail" type="text" class="text" readonly value="dolnikova.yuliia@gmai.com"/>
+            </li>
+            <li>
+                <label for="userBirthday">Birthday:</label>
+                <input id="userBirthday" type="text" class="text" readonly value="21.08.2001"/>
+            </li>
+            <li>
+                <label for="userCity">City:</label>
+                <input id="userCity" type="text" class="text" readonly value="Dnipro"/>
+            </li>
+            <li>
+                <label for="userGender">Gender:</label>
+                <input id="userGender" type="text" class="text" readonly value="Female"/>
+            </li>
+        </ul>
+    </p>
+
+</div>
+
+<div class="footer">
+    <a href="/" class="footer-link">Main Page</a>
+</div>
+
+</body>
+</html>

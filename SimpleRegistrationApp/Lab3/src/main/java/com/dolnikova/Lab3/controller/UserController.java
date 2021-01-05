@@ -36,6 +36,11 @@ public class UserController {
         return "profile";
     }
 
+    @GetMapping("/author")
+    public String authorPage() {
+        return "author";
+    }
+
     @PostMapping("/registration")
     public String registerUser(@ModelAttribute("user") UserCreateDto userCreateDto, Model model) {
         model.addAttribute("user", userFacade.registerUser(userCreateDto));

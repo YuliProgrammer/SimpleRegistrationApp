@@ -44,6 +44,17 @@ a+a {
     margin-left: 10px;
 }
 
+div.polaroid {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+div.container {
+    text-align: center;
+}
+
 .ul {
      all: revert;
      list-style-type: none;
@@ -144,4 +155,23 @@ a+a {
 .cancel {
 	background-color: #ff6666;
 	border: 1px solid #b30000;
+}
+.footer {
+    bottom: 10px;
+    width: 100%;
+    position: fixed;
+    border-radius: 10px;
+    background: -webkit-linear-gradient( #804000, #e67300);
+}
+.footer-link {
+    color: white;
+    text-align: left;
+    font-family: cursive;
+}
+.footer-link:hover {
+    padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: underline;
+	background: #e67300;
+	border-radius: 10px;
 }

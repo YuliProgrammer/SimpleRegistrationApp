@@ -1,6 +1,9 @@
 <!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/signature}">
+
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <link rel="stylesheet" th:href="@{/style/main.css}">
@@ -42,6 +45,9 @@
             <input id="userGender" type="text" class="text" readonly th:text="${user.gender}"/>
         </li>
     </ul>
+
+    <header th:insert="fragments/signature.html :: signature"> </header>
+
 </div>
 </body>
 </html>
