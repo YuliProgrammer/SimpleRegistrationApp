@@ -6,19 +6,20 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
     <link rel="stylesheet" th:href="@{/style/main.css}">
     <title>Profile</title>
 </head>
 
-<script>
+<script type="text/javascript">
  function display(val) {
     document.getElementById("result").value+=val
  }
 
  function calculate() {
-    let x = document.getElementById("result").value
-    let y = eval(x)
-    document.getElementById("result").value = y
+    let x = document.getElementById("result").value;
+    let y = math.evaluate(x.toString());
+    document.getElementById("result").value = y;
  }
 
  function clean() {
@@ -69,31 +70,39 @@
 <table class="calculator">
     <tr>
         <td colspan="3"><input type="text" class="calculateInput" id="result"/></td>
-        <td><input type="button" class="buttonSymbol" value="c" onclick="clean()"/></td>
+        <td><button class="buttonSymbol" onclick="clean()">c</button></td>
+        <td><button class="buttonSymbol" onclick="display('pow(')">pow(x,y)</button></td>
+        <td><button class="buttonSymbol" onclick="display(',')">,</button></td>
     </tr>
     <tr>
-        <td><input type="button" class="buttonNumber" value="1" onclick="display('1')"/></td>
-        <td><input type="button" class="buttonNumber" value="2" onclick="display('2')"/></td>
-        <td><input type="button" class="buttonNumber" value="3" onclick="display('3')"/></td>
-        <td><input type="button" class="buttonSymbol" value="/" onclick="display('/')"/></td>
+        <td><button class="buttonNumber" onclick="display('1')">1</button></td>
+        <td><button class="buttonNumber" onclick="display('2')">2</button></td>
+        <td><button class="buttonNumber" onclick="display('3')">3</button></td>
+        <td><button class="buttonSymbol" onclick="display('/')">/</button></td>
+        <td colspan="2"><button class="buttonSymbol" onclick="display('sqrt(')">sqrt()</button></td>
     </tr>
     <tr>
-        <td><input type="button" class="buttonNumber" value="4" onclick="display('4')"/></td>
-        <td><input type="button" class="buttonNumber" value="5" onclick="display('5')"/></td>
-        <td><input type="button" class="buttonNumber" value="6" onclick="display('6')"/></td>
-        <td><input type="button" class="buttonSymbol" value="-" onclick="display('-')"/></td>
+        <td><button class="buttonNumber" onclick="display('4')">4</button></td>
+        <td><button class="buttonNumber" onclick="display('5')">5</button></td>
+        <td><button class="buttonNumber" onclick="display('6')">6</button></td>
+        <td><button class="buttonSymbol" onclick="display('-')">-</button></td>
+        <td><button class="buttonSymbol" onclick="display('sin(')">sin()</button></td>
+        <td><button class="buttonSymbol" onclick="display('cos(')">cos()</button></td>
     </tr>
     <tr>
-        <td><input type="button" class="buttonNumber" value="7" onclick="display('7')"/></td>
-        <td><input type="button" class="buttonNumber" value="8" onclick="display('8')"/></td>
-        <td><input type="button" class="buttonNumber" value="9" onclick="display('9')"/></td>
-        <td><input type="button" class="buttonSymbol" value="+" onclick="display('+')"/></td>
+        <td><button class="buttonNumber" onclick="display('7')">7</button></td>
+        <td><button class="buttonNumber" onclick="display('8')">8</button></td>
+        <td><button class="buttonNumber" onclick="display('9')">9</button></td>
+        <td><button class="buttonSymbol" onclick="display('+')">+</button></td>
+        <td colspan="2"><button class="buttonSymbol" onclick="display('pi')">pi</button></td>
     </tr>
     <tr>
-        <td><input type="button" class="buttonNumber" value="." onclick="display('.')"/></td>
-        <td><input type="button" class="buttonNumber" value="0" onclick="display('0')"/></td>
-        <td><input type="button" class="buttonSymbol" value="=" onclick="calculate()"/></td>
-        <td><input type="button" class="buttonSymbol" value="*" onclick="display('*')"/></td>
+        <td><button class="buttonNumber" onclick="display('.')">.</button></td>
+        <td><button class="buttonNumber" onclick="display('0')">0</button></td>
+        <td><button class="buttonSymbol" onclick="calculate()">=</button></td>
+        <td><button class="buttonSymbol" onclick="display('*')">*</button></td>
+        <td><button class="buttonSymbol" onclick="display('(')">(</button></td>
+        <td><button class="buttonSymbol" onclick="display(')')">)</button></td>
     </tr>
 </table>
 
